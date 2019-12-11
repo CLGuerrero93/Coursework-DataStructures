@@ -1,0 +1,29 @@
+This is a test.
+B1 instantiated.
+Finished inserting B1: 7/1 6/1 6/1 7/1 6/1 
+Now peeking inside B1...
+Successful Peek?  1
+The item seen was 7/1.
+B2 instantiated as copy B1.
+B2: 7/1 6/1 6/1 7/1 6/1 
+Now removing one 7/1 from B2...
+Success?  1
+B2: 6/1 6/1 7/1 6/1 
+Is 7/1 still a member of B2?  1
+Now removing all occurrences of 7/1 from B1...
+Success?  1
+B2: 6/1 6/1 6/1 
+B3 instantiated.
+Now peeking inside...
+Successful Peek?  0
+Finished inserting B3: 8/1 
+B3 will now be B1...
+B3: 7/1 6/1 6/1 7/1 6/1 
+Is B3 == B1 true?  1
+Is B3 != B2 true?  1
+B1: 7/1 6/1 6/1 7/1 6/1 
+B2: 6/1 6/1 6/1 
+B3: 7/1 6/1 6/1 7/1 6/1 
+How many items in B1?  5
+How many values of 7/1 in B3?  2
+Test complete.

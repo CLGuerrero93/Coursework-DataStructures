@@ -1,0 +1,5 @@
+x+y-z/q*a;
+xx+yy-zz/qq*zz;
+x-z/y+a*q;
+xx+a*y/q-z;
+a*x-y/q+z;

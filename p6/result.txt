@@ -1,0 +1,20 @@
+x + y - z / q * a 
+x y + z q / a * - 
+((x+y)-((z/q)*a))
+
+xx + yy - zz / qq * zz 
+xx yy + zz qq / zz * - 
+((xx+yy)-((zz/qq)*zz))
+
+x - z / y + a * q 
+x z y / - a q * + 
+((x-(z/y))+(a*q))
+
+xx + a * y / q - z 
+xx a y * q / + z - 
+((xx+((a*y)/q))-z)
+
+a * x - y / q + z 
+a x * y q / - z + 
+(((a*x)-(y/q))+z)
+

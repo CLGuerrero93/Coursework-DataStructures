@@ -1,0 +1,16 @@
+Q1 created.
+pushing 10
+pushing 15
+peeking   10
+pop
+peeking   15
+Q2 created as copy of Q1
+peeking   15
+S1 created.
+pushing 14
+pushing 18
+peeking   18
+pop
+peeking   14
+Q2 created as copy of Q1
+peeking   14
