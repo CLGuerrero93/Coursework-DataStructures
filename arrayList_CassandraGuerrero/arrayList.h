@@ -1,0 +1,102 @@
+//Author:          Cassandra Guerrero
+//Creation Date:   21 September 2015
+//Due Date:        21 September 2015
+//Course:          CSC 402
+//Professor Name:  Dr. Wang
+//Assignment:      in-class
+//Filename:        arrayList.h
+//Purpose:         template arrayList class definition and implementation from ADT linearList
+
+#include <iostream>
+#include "linearList.h"
+
+using namespace std;
+
+template<class T>
+class arrayList : public linearList<T>
+{
+
+protected:
+  void checkIndex(int theIndex) const //checks if the index is legal
+  {return (theIndex >= 0 && theIndex < arrayLength);}
+
+  T *element; // all items are int type
+  int listSize; // number of elements in array
+  int arrayLength; // capacity of the 1D array
+	
+public:
+
+  //constructor
+  arrayList(int initialCapacity = 10)
+  {
+      element = new T [initialCapacity];
+      arrayLength = initialCapacity;
+      listSize = 0;
+  }
+
+  arrayList(const arrayList<T> &A)
+  {
+    element = new T [A.capacity()];
+    arrayLength = A.capacity();
+    listSize = A.size();
+    for(int i = 0; i < A.size(); i++)
+      insert(i, A.get(i));
+  }	    	     
+
+  ~arrayList(){delete [] element;}
+
+  bool empty() const {return listSize == 0;}	
+
+  int size() const {return listSize;}
+
+  int get(int theIndex) const
+  {
+    if(checkIndex(theIndex))
+      return element[theIndex];
+  }
+
+  int indexOf(const T& theElement) const 
+  {
+    int index = -1; //returns -1 if theElement is not found
+    for(int i = 0; i < listSize; i++)
+      {
+	if(element[i] == theElement)
+	  index = i;
+      }
+    return index;
+  }
+
+  void erase(int theIndex)
+  {
+    if(checkIndex(theIndex))
+      {
+	for(int i = index; i < listSize - 1; i++)
+	  element[i] = element[i+1];
+	listSize--;
+      }
+  }
+
+  void insert(int theIndex, const T& theElement)
+  {
+    if(checkIndex(theIndex))
+      {
+	if(listSize != arrayLength)
+	  {
+	    for(int i = listSize; i > index; i--)
+	      element[i] = element[i-1];
+	    element[theIndex] = theElement;
+	    listSize++;
+	  }
+      }
+  }
+
+  void output(ostream& out) const
+  {
+    for(int i = 0; i < listSize; i++)
+      out<<element[i]<<" ";
+    out<<endl;
+  }
+
+  int capacity() const {return arrayLength;}
+
+};
